@@ -1,0 +1,14 @@
+{
+  "name": "HaiyanUbills",
+  "version": "0.0.1",
+  "authors": [
+    "Team 420"
+  ],
+  "description": "Billing Information System",
+  "private": true,
+  "dependencies": {
+    "adminlte": "almasaeed2010/adminlte",
+    "bootstrap": "twbs/bootstrap-sass",
+    "jquery": "jquery/jquery"
+  }
+}
