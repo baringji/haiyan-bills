@@ -1,4 +1,5 @@
 jQuery(function($) {
+
     $(document).ready(function() {
 
         $('.flexslider').flexslider({
@@ -23,4 +24,11 @@ jQuery(function($) {
         });
 
     });
+
+    $(window).load(function() {
+        if ($(window).scrollTop() > jQuery('#about').offset().top - 170) {
+            $('.navbar-default').css('background-color', 'rgba(34, 34, 34, 1)');
+        }
+    })
+
 });

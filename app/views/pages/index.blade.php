@@ -38,10 +38,11 @@
                     </div>
                     <div class="collapse navbar-collapse" id="id-navbar-collapse">
                         <ul class="nav navbar-nav pull-right">
+                            <li><a data-url="header" class="navigate-to"><i class="fa fa-home"></i></a></li>
                             <li><a data-url="about" class="navigate-to">About</a></li>
                             <li><a data-url="team" class="navigate-to">Team</a></li>
                             <li><a data-url="contact" class="navigate-to">Contact</a></li>
-                            <li><a data-url="signup-login" class="navigate-to">Sign Up/Log In</a></li>
+                            <li><a data-url="signup-login" class="navigate-to"><i class="fa fa-sign-in"></i> Sign Up/Log In</a></li>
                         </ul>
                     </div>
                 </div>
