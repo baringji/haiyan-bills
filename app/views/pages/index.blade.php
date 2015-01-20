@@ -37,7 +37,7 @@
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="id-navbar-collapse">
-                        <ul class="nav navbar-nav pull-right">
+                        <ul class="nav navbar-nav navbar-pill pull-right">
                             <li><a data-url="header" class="navigate-to"><i class="fa fa-home"></i></a></li>
                             <li><a data-url="about" class="navigate-to">About</a></li>
                             <li><a data-url="team" class="navigate-to">Team</a></li>

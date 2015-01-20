@@ -1,12 +1,12 @@
 {
   "name": "adminlte",
   "homepage": "https://github.com/almasaeed2010/adminlte",
-  "version": "1.2.1",
-  "_release": "1.2.1",
+  "version": "1.3.1",
+  "_release": "1.3.1",
   "_resolution": {
     "type": "version",
-    "tag": "1.2.1",
-    "commit": "ac69a861ee8f39010b4037311f02bb6453ed4eac"
+    "tag": "1.3.1",
+    "commit": "5b7d35a2f2c0ee1b8e6cd7acfa235c497f3f616a"
   },
   "_source": "git://github.com/almasaeed2010/adminlte.git",
   "_target": "*",
