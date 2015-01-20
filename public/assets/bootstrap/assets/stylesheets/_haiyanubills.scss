@@ -1,8 +1,4 @@
 @media (max-width: $screen-xs-max) {
-    header {
-
-    }
-
     .signup-border {
         border-right: 1px solid #eee;
     }
@@ -75,8 +71,31 @@
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) { }
 
 @media (min-width: $screen-lg-min) {
-    header {
+    .navbar {
+        border-top: 5px solid $brand-primary;
+    }
 
+    .navbar-header {
+        -webkit-transform: skew(-30deg, 0deg);
+            -ms-transform: skew(-30deg, 0deg);
+                transform: skew(-30deg, 0deg);
+        background-color: $brand-primary;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding: 25px 15px;
+        -webkit-transform: skew(30deg, 0deg);
+            -ms-transform: skew(30deg, 0deg);
+                transform: skew(30deg, 0deg);
+
+        img {
+            display: inline-block;
+            width: 80px;
+            margin-right: 10px;
+        }
     }
 
     .signup-border {
@@ -134,12 +153,15 @@
             background-color: $brand-primary;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
-            cursor: pointer;
 
             &:hover {
                 text-decoration: none;
                 background-color: darken($brand-primary, 5%);
             }
         }
+    }
+
+    .navigate-to {
+        cursor: pointer;
     }
 }

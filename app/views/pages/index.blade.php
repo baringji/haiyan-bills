@@ -22,8 +22,30 @@
         <![endif]-->
     </head>
     <body>
-        <header>
-
+        <header id="header">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#id-navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a data-url="header" class="navbar-brand navigate-to">
+                            <img alt="HaiyanUbills" src="{{ URL::asset('images/logo.png') }}">
+                            <strong>HaiyanUbills</strong>
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="id-navbar-collapse">
+                        <ul class="nav navbar-nav pull-right">
+                            <li><a data-url="about" class="navigate-to">About</a></li>
+                            <li><a data-url="team" class="navigate-to">Team</a></li>
+                            <li><a data-url="contact" class="navigate-to">Contact</a></li>
+                            <li><a data-url="signup-login" class="navigate-to">Sign Up/Log In</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <div class="flexslider">
                 <ul class="slides">
                     <li>
