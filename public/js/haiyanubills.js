@@ -29,6 +29,12 @@ jQuery(function($) {
         if ($(window).scrollTop() > jQuery('#about').offset().top - 170) {
             $('.navbar-default').css('background-color', 'rgba(34, 34, 34, 1)');
         }
-    })
+    }).scroll(function() {
+        if ($(window).scrollTop() > jQuery('#about').offset().top - 170) {
+            $('.navbar-default').css('background-color', 'rgba(34, 34, 34, 1)');
+        } else {
+            $('.navbar-default').css('background-color', 'rgba(34, 34, 34, 0.4)');
+        }
+    });
 
 });
