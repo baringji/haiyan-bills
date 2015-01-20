@@ -1,65 +1,145 @@
-header {
+@media (max-width: $screen-xs-max) {
+    header {
 
-}
+    }
 
-.signup-border {
-    border-right: 1px solid #eee;
-}
+    .signup-border {
+        border-right: 1px solid #eee;
+    }
 
-.flexslider {
-    border-top: none!important;
-    border-right: none!important;
-    border-bottom: 5px solid $brand-primary!important;
-    border-left: none!important;
-    border-shadow: none!important;
-    margin-bottom: 30px!important;
-
-    li {
+    .signup-login-title {
         text-align: center;
-        height: 630px;
+    }
 
-        img {
-            max-height: 630px;
-            position: absolute;
-            top: 0;
+    .flexslider {
+        border-top: none!important;
+        border-right: none!important;
+        border-bottom: 5px solid $brand-primary!important;
+        border-left: none!important;
+        border-shadow: none!important;
+        margin-bottom: 30px!important;
+        border-radius: 0!important;
+
+        li {
+            text-align: center;
+            height: 630px;
+
+            img {
+                max-height: 630px;
+                position: absolute;
+                top: 0;
+            }
+        }
+    }
+
+    .flex-caption {
+        position: relative;
+        top: 300px;
+        z-index: 1;
+
+        h3 {
+            color: #fff;
+            border: 4px solid #fff;
+            padding: 10px;
+            width: 90%;
+            margin: 0 auto 25px;
+            font-weight: bold;
+        }
+
+        p {
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .btn-slide {
+            position: relative;
+            top: 74px;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px 45px;
+            background-color: $brand-primary;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: none;
+                background-color: darken($brand-primary, 5%);
+            }
         }
     }
 }
 
-.flex-caption {
-    position: relative;
-    top: 300px;
-    z-index: 1;
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { }
 
-    h3 {
-        color: #fff;
-        border: 4px solid #fff;
-        padding: 10px;
-        width: 700px;
-        margin: 0 auto 25px;
-        font-size: 96px;
-        font-weight: bold;
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) { }
+
+@media (min-width: $screen-lg-min) {
+    header {
+
     }
 
-    p {
-        color: #fff;
-        font-size: 28px;
-        text-transform: uppercase;
+    .signup-border {
+        border-right: 1px solid #eee;
     }
 
-    .btn-slide {
+    .flexslider {
+        border-top: none!important;
+        border-right: none!important;
+        border-bottom: 5px solid $brand-primary!important;
+        border-left: none!important;
+        border-shadow: none!important;
+        margin-bottom: 30px!important;
+        border-radius: 0!important;
+
+        li {
+            text-align: center;
+            height: 630px;
+
+            img {
+                max-height: 630px;
+                position: absolute;
+                top: 0;
+            }
+        }
+    }
+
+    .flex-caption {
         position: relative;
-        top: 72px;
-        color: #fff;
-        font-size: 24px;
-        padding: 20px 45px;
-        background-color: $brand-primary;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        top: 300px;
+        z-index: 1;
 
-        &:hover {
-            text-decoration: none;
-            background-color: darken($brand-primary, 5%);
+        h3 {
+            color: #fff;
+            border: 4px solid #fff;
+            padding: 10px;
+            width: 700px;
+            margin: 0 auto 25px;
+            font-size: 96px;
+            font-weight: bold;
+        }
+
+        p {
+            color: #fff;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        .btn-slide {
+            position: relative;
+            top: 74px;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px 45px;
+            background-color: $brand-primary;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: none;
+                background-color: darken($brand-primary, 5%);
+            }
         }
     }
 }

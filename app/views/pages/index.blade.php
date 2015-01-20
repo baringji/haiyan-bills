@@ -8,6 +8,8 @@
 
         <link rel="shortcut icon" href="{{ URL::asset('favicon.png') }}">
 
+        <link rel='stylesheet' href="{{ URL::asset('fonts/fonts.css') }}" type='text/css'>
+
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{ URL::asset('assets/bootstrap/assets/stylesheets/styles.css') }}" />
         <link rel="stylesheet" href="{{ URL::asset('assets/flexslider/flexslider.css') }}" />
@@ -28,7 +30,7 @@
                         <div class="flex-caption">
                             <h3>HaiyanUbills</h3>
                             <p>Start & Grow Faster</p>
-                            <a href="#signup-login" class="btn-slide">sign up now</a>
+                            <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
                         </div>
                         <img src="{{ URL::asset('images/slide01.png') }}" alt="Slide 01">
                     </li>
@@ -36,7 +38,7 @@
                         <div class="flex-caption">
                             <h3>HaiyanUbills</h3>
                             <p>Start & Grow Faster</p>
-                            <a href="#signup-login" class="btn-slide">sign up now</a>
+                            <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
                         </div>
                         <img src="{{ URL::asset('images/slide01.png') }}" alt="Slide 02">
                     </li>
@@ -44,7 +46,7 @@
                         <div class="flex-caption">
                             <h3>HaiyanUbills</h3>
                             <p>Start & Grow Faster</p>
-                            <a href="#signup-login" class="btn-slide">sign up now</a>
+                            <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
                         </div>
                         <img src="{{ URL::asset('images/slide01.png') }}" alt="Slide 03">
                     </li>
@@ -52,7 +54,7 @@
                         <div class="flex-caption">
                             <h3>HaiyanUbills</h3>
                             <p>Start & Grow Faster</p>
-                            <a href="#signup-login" class="btn-slide">sign up now</a>
+                            <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
                         </div>
                         <img src="{{ URL::asset('images/slide01.png') }}" alt="Slide 04">
                     </li>
@@ -150,11 +152,11 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h2 id="signup-login" class="text-primary">sign up now / Log In</h2>
+                    <h2 id="signup-login" class="text-primary">Sign Up Now / Log In</h2>
                     <hr>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 signup-border">
-                            <h3 class="text-warning">Free sign up now</h3>
+                            <h3 class="text-warning signup-login-title">Free Sign Up Now</h3>
                             {{ Form::open(array('url' => 'signup')) }}
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -207,14 +209,14 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <button class="btn btn-primary btn-block" name="signup-submit" id="signup-submit" type="submit">sign up now</button>
+                                        <button class="btn btn-primary btn-block" name="signup-submit" id="signup-submit" type="submit">Sign Up Now</button>
                                     </div>
                                 </div>
                             </div>
                             {{ Form::close() }}
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 login-border">
-                            <h3 class="text-warning">HaiyanUbill's Log In</h3>
+                            <h3 class="text-warning signup-login-title">Log In To HaiyanUbills</h3>
                             {{ Form::open(array('url' => 'login')) }}
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
