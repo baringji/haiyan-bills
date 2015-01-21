@@ -1,6 +1,7 @@
 /bootstrap/compiled.php
 /public/.sass-cache
 /public/assets/*
+!/public/assets/.gitkeep
 /vendor
 composer.phar
 composer.lock
