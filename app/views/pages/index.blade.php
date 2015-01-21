@@ -9,9 +9,10 @@
         <link rel="shortcut icon" href="{{ URL::asset('favicon.png') }}">
 
         <link rel='stylesheet' href="{{ URL::asset('fonts/fonts.css') }}" type='text/css'>
+        <link rel="stylesheet" href="{{ URL::asset('assets/fontawesome/css/font-awesome.min.css') }}" />
 
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="{{ URL::asset('assets/bootstrap/assets/stylesheets/styles.css') }}" />
+        <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
         <link rel="stylesheet" href="{{ URL::asset('assets/flexslider/flexslider.css') }}" />
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
