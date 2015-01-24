@@ -39,10 +39,10 @@
                     </div>
                     <div class="collapse navbar-collapse" id="id-navbar-collapse">
                         <ul class="nav navbar-nav navbar-pill pull-right">
-                            <li><a data-url="header" class="navigate-to"><i class="fa fa-home"></i></a></li>
-                            <li><a data-url="about" class="navigate-to">About</a></li>
-                            <li><a data-url="team" class="navigate-to">Team</a></li>
-                            <li><a data-url="contact" class="navigate-to">Contact</a></li>
+                            <li><a data-url="header" class="navigate-to"><i class="fa fa-home"></i> Home</a></li>
+                            <li><a data-url="about" class="navigate-to"><i class="fa fa-info"></i> About</a></li>
+                            <li><a data-url="team" class="navigate-to"><i class="fa fa-users"></i> Team</a></li>
+                            <li><a data-url="contact" class="navigate-to"><i class="fa fa-envelope"></i> Contact</a></li>
                             <li><a data-url="signup-login" class="navigate-to"><i class="fa fa-sign-in"></i> Sign Up/Log In</a></li>
                         </ul>
                     </div>
@@ -141,6 +141,13 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <h2 id="contact" class="text-primary">Contact</h2>
                     <hr>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.561129290134!2d123.896796!3d10.296901000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99be2b31d6f0f%3A0x48243116b41a42f9!2sUniversity+of+Cebu+Main+Campus!5e0!3m2!1sen!2sph!4v1422113000589" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                            </div>
+                        </div>
+                    </div>
                     {{ Form::open(array('url' => 'contact')) }}
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -150,7 +157,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div cclass="form-group">
+                            <div class="form-group">
                                 <label for="contact-email">Email Address</label>
                                 <input type="text" class="form-control input-lg" name="contact-email" id="contact-email" placeholder="Enter email address">
                             </div>
