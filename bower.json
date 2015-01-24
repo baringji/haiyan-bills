@@ -10,6 +10,7 @@
     "adminlte": "almasaeed2010/adminlte",
     "bootstrap": "twbs/bootstrap-sass",
     "fontawesome": "components/font-awesome",
-    "jquery": "jquery/jquery"
+    "jquery": "jquery/jquery",
+    "scrollrevealjs": "julianlloyd/scrollReveal.js"
   }
 }

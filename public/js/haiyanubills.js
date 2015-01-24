@@ -38,3 +38,5 @@ jQuery(function($) {
     });
 
 });
+
+window.sr = new scrollReveal();

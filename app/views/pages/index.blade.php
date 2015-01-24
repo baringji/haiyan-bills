@@ -86,14 +86,14 @@
             </div>
         </header>
         <div class="container">
-            <div class="row">
+            <div class="row" data-sr="reset">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <h2 id="about" class="text-primary">{{ Lang::get('common.about') }}</h2>
                     <hr>
                     <p class="text-justify">{{ Lang::get('common.about-description') }}</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" data-sr="reset">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <h2 id="team" class="text-primary">Team</h2>
                     <hr>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" data-sr="reset">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <h2 id="contact" class="text-primary">Contact</h2>
                     <hr>
@@ -181,7 +181,7 @@
                     {{ Form::close() }}
                 </div>
             </div>
-            <div class="row">
+            <div class="row" data-sr="reset">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <h2 id="signup-login" class="text-primary">Sign Up Now / Log In</h2>
                     <hr>
@@ -293,6 +293,7 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{{ URL::asset('assets/bootstrap/assets/javascripts/bootstrap.js') }}"></script>
         <script src="{{ URL::asset('assets/flexslider/jquery.flexslider-min.js') }}"></script>
+        <script src="{{ URL::asset('assets/scrollrevealjs/dist/scrollReveal.min.js') }}"></script>
         <script src="{{ URL::asset('js/haiyanubills.js') }}"></script>
     </body>
 </html>
