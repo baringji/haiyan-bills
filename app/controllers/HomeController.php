@@ -47,7 +47,7 @@ class HomeController extends BaseController {
         if ($validator->fails() OR ! Auth::attempt($userLogin)) {
             return Redirect::to('login')
                 ->withErrors($validator)
-                ->withInput(Input::except('password'));
+                ->withInput(Input::except('login-password'));
         }
 
         return Redirect::intended('dashboard');

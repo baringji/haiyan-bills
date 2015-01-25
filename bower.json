@@ -7,10 +7,12 @@
   "description": "Billing Information System",
   "private": true,
   "dependencies": {
-    "adminlte": "almasaeed2010/adminlte",
-    "bootstrap": "twbs/bootstrap-sass",
-    "fontawesome": "components/font-awesome",
+    "AdminLTE": "almasaeed2010/AdminLTE",
+    "bootstrap": "twbs/bootstrap",
+    "bootstrap-sass": "twbs/bootstrap-sass",
+    "FlexSlider": "woothemes/FlexSlider",
+    "font-awesome": "components/font-awesome",
     "jquery": "jquery/jquery",
-    "scrollrevealjs": "julianlloyd/scrollReveal.js"
+    "scrollReveal.js": "julianlloyd/scrollReveal.js"
   }
 }

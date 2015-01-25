@@ -9,11 +9,11 @@
         <link rel="shortcut icon" href="{{ URL::asset('favicon.png') }}">
 
         <link rel='stylesheet' href="{{ URL::asset('fonts/fonts.css') }}" type='text/css'>
-        <link rel="stylesheet" href="{{ URL::asset('assets/fontawesome/css/font-awesome.min.css') }}" />
+        <link rel="stylesheet" href="{{ URL::asset('assets/font-awesome/css/font-awesome.min.css') }}" />
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
-        <link rel="stylesheet" href="{{ URL::asset('assets/flexslider/flexslider.css') }}" />
+        <link rel="stylesheet" href="{{ URL::asset('assets/FlexSlider/flexslider.css') }}" />
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -292,8 +292,8 @@
         <script src="{{ URL::asset('assets/jquery/dist/jquery.min.js') }}"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{{ URL::asset('assets/bootstrap/assets/javascripts/bootstrap.js') }}"></script>
-        <script src="{{ URL::asset('assets/flexslider/jquery.flexslider-min.js') }}"></script>
-        <script src="{{ URL::asset('assets/scrollrevealjs/dist/scrollReveal.min.js') }}"></script>
+        <script src="{{ URL::asset('assets/FlexSlider/jquery.flexslider-min.js') }}"></script>
+        <script src="{{ URL::asset('assets/scrollReveal.js/dist/scrollReveal.min.js') }}"></script>
         <script src="{{ URL::asset('js/haiyanubills.js') }}"></script>
     </body>
 </html>
