@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('pages/index');
+Route::get('/', function() {
+    return View::make('pages/index');
 });
+
+Route::post('contact', 'HomeController@doContact');
+Route::post('register', 'HomeController@doRegister');
+Route::post('login', 'HomeController@doLogin');
+
+Route::get('login', 'HomeController@showLogin');
+Route::get('logout', 'HomeController@doLogout');

@@ -86,20 +86,20 @@
             </div>
         </header>
         <div class="container">
-            <div class="row" data-sr="reset">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h2 id="about" class="text-primary">{{ Lang::get('common.about') }}</h2>
+                    <h2 id="about" class="text-primary" data-sr="reset">{{ Lang::get('common.about') }}</h2>
                     <hr>
-                    <p class="text-justify">{{ Lang::get('common.about-description') }}</p>
+                    <p class="text-justify" data-sr="reset">{{ Lang::get('common.about-description') }}</p>
                 </div>
             </div>
-            <div class="row" data-sr="reset">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h2 id="team" class="text-primary">Team</h2>
+                    <h2 id="team" class="text-primary" data-sr="reset">Team</h2>
                     <hr>
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                            <div class="thumbnail text-center">
+                            <div class="thumbnail text-center" data-sr="reset">
                                 <img src="{{ URL::asset('images/300x300.png') }}" alt="..." class="img-circle">
                                 <div class="caption">
                                     <h3>Name</h3>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                            <div class="thumbnail text-center">
+                            <div class="thumbnail text-center" data-sr="reset">
                                 <img src="{{ URL::asset('images/300x300.png') }}" alt="..." class="img-circle">
                                 <div class="caption">
                                     <h3>Name</h3>
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                            <div class="thumbnail text-center">
+                            <div class="thumbnail text-center" data-sr="reset">
                                 <img src="{{ URL::asset('images/300x300.png') }}" alt="..." class="img-circle">
                                 <div class="caption">
                                     <h3>Name</h3>
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                            <div class="thumbnail text-center">
+                            <div class="thumbnail text-center" data-sr="reset">
                                 <img src="{{ URL::asset('images/300x300.png') }}" alt="..." class="img-circle">
                                 <div class="caption">
                                     <h3>Name</h3>
@@ -137,13 +137,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row" data-sr="reset">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h2 id="contact" class="text-primary">Contact</h2>
+                    <h2 id="contact" class="text-primary" data-sr="reset">Contact</h2>
                     <hr>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="form-group">
+                            <div class="form-group" data-sr="reset">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.561129290134!2d123.896796!3d10.296901000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99be2b31d6f0f%3A0x48243116b41a42f9!2sUniversity+of+Cebu+Main+Campus!5e0!3m2!1sen!2sph!4v1422113000589" width="100%" height="300" frameborder="0" style="border:0"></iframe>
                             </div>
                         </div>
@@ -151,13 +151,13 @@
                     {{ Form::open(array('url' => 'contact')) }}
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="form-group">
+                            <div class="form-group" data-sr="reset">
                                 <label for="contact-name">Name</label>
                                 <input type="text" class="form-control input-lg" name="contact-name" id="contact-name" placeholder="Enter name">
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="form-group">
+                            <div class="form-group" data-sr="reset">
                                 <label for="contact-email">Email Address</label>
                                 <input type="text" class="form-control input-lg" name="contact-email" id="contact-email" placeholder="Enter email address">
                             </div>
@@ -165,7 +165,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="form-group">
+                            <div class="form-group" data-sr="reset">
                                 <label for="contact-message">Your Message</label>
                                 <textarea class="form-control input-lg" rows="3" name="contact-message" id="contact-message" placeholder="Enter your message"></textarea>
                             </div>
@@ -173,7 +173,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="form-group">
+                            <div class="form-group" data-sr="reset">
                                 <button class="btn btn-primary btn-lg btn-block" name="submit" id="submit" type="submit">Contact Us</button>
                             </div>
                         </div>
@@ -181,17 +181,17 @@
                     {{ Form::close() }}
                 </div>
             </div>
-            <div class="row" data-sr="reset">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h2 id="signup-login" class="text-primary">Sign Up Now / Log In</h2>
+                    <h2 id="signup-login" class="text-primary" data-sr="reset">Sign Up Now / Log In</h2>
                     <hr>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 signup-border">
-                            <h3 class="text-warning signup-login-title">Free Sign Up Now</h3>
+                            <h3 class="text-warning signup-login-title" data-sr="reset">Free Sign Up Now</h3>
                             {{ Form::open(array('url' => 'signup')) }}
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <label for="signup-last-name">Last Name</label>
                                         <input type="text" class="form-control" name="signup-last-name" id="signup-last-name" placeholder="Enter last name">
                                     </div>
@@ -199,7 +199,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <label for="signup-first-name">First Name</label>
                                         <input type="text" class="form-control" name="signup-first-name" id="signup-first-name" placeholder="Enter first name">
                                     </div>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <label for="signup-email">Email Address</label>
                                         <input type="email" class="form-control" name="signup-email" id="signup-email" placeholder="Enter email address">
                                     </div>
@@ -215,7 +215,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <label for="signup-username">Username</label>
                                         <input type="text" class="form-control" name="signup-username" id="signup-username" placeholder="Enter username">
                                     </div>
@@ -223,7 +223,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <label for="signup-password">Password</label>
                                         <input type="password" class="form-control" name="signup-password" id="signup-password" placeholder="Enter password">
                                     </div>
@@ -231,7 +231,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <label for="signup-password-confirm">Confirm Password</label>
                                         <input type="password" class="form-control" name="signup-password-confirm" id="signup-password-confirm" placeholder="Re-enter password">
                                     </div>
@@ -239,7 +239,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <button class="btn btn-primary btn-block" name="signup-submit" id="signup-submit" type="submit">Sign Up Now</button>
                                     </div>
                                 </div>
@@ -247,11 +247,11 @@
                             {{ Form::close() }}
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 login-border">
-                            <h3 class="text-warning signup-login-title">Log In To HaiyanUbills</h3>
+                            <h3 class="text-warning signup-login-title" data-sr="reset">Log In To HaiyanUbills</h3>
                             {{ Form::open(array('url' => 'login')) }}
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <label for="login-username">Username</label>
                                         <input type="text" class="form-control" name="login-username" id="login-username" placeholder="Enter username">
                                     </div>
@@ -259,7 +259,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <label for="login-password">Password</label>
                                         <input type="password" class="form-control" name="login-password" id="login-password" placeholder="Enter password">
                                     </div>
@@ -267,7 +267,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group" data-sr="reset">
                                         <button class="btn btn-primary btn-block" name="login-submit" id="login-submit" type="submit">Log In</button>
                                     </div>
                                 </div>
