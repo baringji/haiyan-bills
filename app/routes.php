@@ -24,4 +24,10 @@ Route::get('logout', 'HomeController@doLogout');
 
 Route::group(array('before' => 'auth'), function() {
     Route::get('dashboard', 'HomeController@dashboard');
+    Route::get('bills', 'BillController@index');
+    Route::get('receipts', 'ReceiptController@index');
+    Route::get('files', 'FileController@index');
+    Route::get('notes', 'NoteController@index');
+    Route::get('payment-centers', 'PaymentCenterController@index');
+    Route::get('landmarks', 'LandmarkController@index');
 });

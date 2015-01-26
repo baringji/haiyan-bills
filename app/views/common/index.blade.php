@@ -23,7 +23,7 @@
               <img src="{{ URL::asset('images/avatar.png') }}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Hello, Jane</p>
+              <p>Hello, {{ Auth::user()->first_name }}</p>
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
@@ -40,6 +40,7 @@
             <li><a href="bills"><i class="fa fa-calendar"></i> <span>Bills</span></a></li>
             <li><a href="receipts"><i class="fa fa-th"></i> <span>Receipts</span></a></li>
             <li><a href="files"><i class="fa fa-folder"></i> <span>Files</span></a></li>
+            <li><a href="notes"><i class="fa fa-save"></i> <span>Notes</span></a></li>
             <li><a href="payment-centers"><i class="fa fa-bookmark"></i> <span>Payment Centers</span></a></li>
             <li><a href="landmarks"><i class="fa fa-map-marker"></i> <span>Landmarks</span></a></li>
           </ul>

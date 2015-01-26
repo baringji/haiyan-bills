@@ -1,10 +1,8 @@
 <header class="header">
-  <a href="../../index.html" class="logo">
+  <a href="dashboard" class="logo">
     HaiyanUbills
   </a>
-  <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top" role="navigation">
-    <!-- Sidebar toggle button-->
     <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
@@ -13,7 +11,6 @@
     </a>
     <div class="navbar-right">
       <ul class="nav navbar-nav">
-        <!-- Messages: style can be found in dropdown.less-->
         <li class="dropdown messages-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-envelope"></i>
@@ -22,9 +19,8 @@
           <ul class="dropdown-menu">
             <li class="header">You have 4 messages</li>
             <li>
-              <!-- inner menu: contains the actual data -->
               <ul class="menu">
-                <li><!-- start message -->
+                <li>
                   <a href="#">
                     <div class="pull-left">
                       <img src="{{ URL::asset('images/avatar.png') }}" class="img-circle" alt="User Image"/>
@@ -35,7 +31,7 @@
                     </h4>
                     <p>Why not buy a new awesome theme?</p>
                   </a>
-                </li><!-- end message -->
+                </li>
                 <li>
                   <a href="#">
                     <div class="pull-left">
@@ -89,7 +85,6 @@
             <li class="footer"><a href="#">See All Messages</a></li>
           </ul>
         </li>
-        <!-- Notifications: style can be found in dropdown.less -->
         <li class="dropdown notifications-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-warning"></i>
@@ -98,7 +93,6 @@
           <ul class="dropdown-menu">
             <li class="header">You have 10 notifications</li>
             <li>
-              <!-- inner menu: contains the actual data -->
               <ul class="menu">
                 <li>
                   <a href="#">
@@ -115,7 +109,6 @@
                     <i class="fa fa-users warning"></i> 5 new members joined
                   </a>
                 </li>
-
                 <li>
                   <a href="#">
                     <i class="ion ion-ios7-cart success"></i> 25 sales made
@@ -131,7 +124,6 @@
             <li class="footer"><a href="#">View all</a></li>
           </ul>
         </li>
-        <!-- Tasks: style can be found in dropdown.less -->
         <li class="dropdown tasks-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-tasks"></i>
@@ -140,9 +132,8 @@
           <ul class="dropdown-menu">
             <li class="header">You have 9 tasks</li>
             <li>
-              <!-- inner menu: contains the actual data -->
               <ul class="menu">
-                <li><!-- Task item -->
+                <li>
                   <a href="#">
                     <h3>
                       Design some buttons
@@ -154,8 +145,8 @@
                       </div>
                     </div>
                   </a>
-                </li><!-- end task item -->
-                <li><!-- Task item -->
+                </li>
+                <li>
                   <a href="#">
                     <h3>
                       Create a nice theme
@@ -167,8 +158,8 @@
                       </div>
                     </div>
                   </a>
-                </li><!-- end task item -->
-                <li><!-- Task item -->
+                </li>
+                <li>
                   <a href="#">
                     <h3>
                       Some task I need to do
@@ -180,8 +171,8 @@
                       </div>
                     </div>
                   </a>
-                </li><!-- end task item -->
-                <li><!-- Task item -->
+                </li>
+                <li>
                   <a href="#">
                     <h3>
                       Make beautiful transitions
@@ -193,7 +184,7 @@
                       </div>
                     </div>
                   </a>
-                </li><!-- end task item -->
+                </li>
               </ul>
             </li>
             <li class="footer">
@@ -201,40 +192,36 @@
             </li>
           </ul>
         </li>
-        <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="glyphicon glyphicon-user"></i>
-            <span>Jane Doe <i class="caret"></i></span>
+            <span>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <i class="caret"></i></span>
           </a>
           <ul class="dropdown-menu">
-            <!-- User image -->
             <li class="user-header bg-light-blue">
               <img src="{{ URL::asset('images/avatar.png') }}" class="img-circle" alt="User Image" />
               <p>
-                Jane Doe - Web Developer
+                {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} - Web Developer
                 <small>Member since Nov. 2012</small>
               </p>
             </li>
-            <!-- Menu Body -->
             <li class="user-body">
               <div class="col-xs-4 text-center">
-                <a href="#">Followers</a>
+                <a href="#">Bills</a>
               </div>
               <div class="col-xs-4 text-center">
-                <a href="#">Sales</a>
+                <a href="#">Receipts</a>
               </div>
               <div class="col-xs-4 text-center">
-                <a href="#">Friends</a>
+                <a href="#">Notes</a>
               </div>
             </li>
-            <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="{{ URL::to('logout') }}" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>

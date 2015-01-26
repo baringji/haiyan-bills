@@ -1,6 +1,6 @@
 @extends('common/index')
 @section('title')
-<title>{{ Lang::get('common.title') }} | Payment Centers</title>
+<title>{{ Lang::get('common.title') }} | File Manager</title>
 @stop
 @section('meta')
 <meta itemscope itemtype="http://schema.org/Website" />
@@ -17,17 +17,18 @@
 <aside class="right-side">
   <section class="content-header">
     <h1>
-      Payment Centers
-      <small>List of payment centers</small>
+      Files
+      <small>File manager</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Payment Centers</li>
+      <li class="active">Files</li>
     </ol>
   </section>
   <section class="content">
     <div class="row">
       <div class="col-lg-12 col-xs-12">
+
       </div>
     </div>
   </section>
