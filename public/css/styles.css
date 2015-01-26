@@ -5648,7 +5648,7 @@ button.close {
     z-index: 1; }
     .flex-caption h3 {
       color: #fff;
-      border: 1px solid #222;
+      border: 1px solid rgba(17, 17, 17, 0.4);
       background: rgba(0, 0, 0, 0.4);
       padding: 10px;
       width: 90%;
@@ -5718,7 +5718,7 @@ button.close {
     z-index: 1; }
     .flex-caption h3 {
       color: #fff;
-      border: 1px solid #222;
+      border: 1px solid rgba(17, 17, 17, 0.4);
       background: rgba(0, 0, 0, 0.4);
       padding: 10px;
       width: 700px;
