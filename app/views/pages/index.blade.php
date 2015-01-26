@@ -56,7 +56,7 @@
                             <p>Start & Grow Faster</p>
                             <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
                         </div>
-                        <img src="{{ URL::asset('images/slide01.png') }}" alt="Slide 01">
+                        <img src="{{ URL::asset('images/slide-01.jpg') }}" alt="Slide 01">
                     </li>
                     <li>
                         <div class="flex-caption">
@@ -64,7 +64,7 @@
                             <p>Start & Grow Faster</p>
                             <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
                         </div>
-                        <img src="{{ URL::asset('images/slide01.png') }}" alt="Slide 02">
+                        <img src="{{ URL::asset('images/slide-02.jpg') }}" alt="Slide 02">
                     </li>
                     <li>
                         <div class="flex-caption">
@@ -72,7 +72,7 @@
                             <p>Start & Grow Faster</p>
                             <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
                         </div>
-                        <img src="{{ URL::asset('images/slide01.png') }}" alt="Slide 03">
+                        <img src="{{ URL::asset('images/slide-03.jpg') }}" alt="Slide 03">
                     </li>
                     <li>
                         <div class="flex-caption">
@@ -80,7 +80,7 @@
                             <p>Start & Grow Faster</p>
                             <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
                         </div>
-                        <img src="{{ URL::asset('images/slide01.png') }}" alt="Slide 04">
+                        <img src="{{ URL::asset('images/slide-04.jpg') }}" alt="Slide 04">
                     </li>
                 </ul>
             </div>

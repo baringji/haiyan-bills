@@ -5648,7 +5648,8 @@ button.close {
     z-index: 1; }
     .flex-caption h3 {
       color: #fff;
-      border: 4px solid #fff;
+      border: 1px solid #222;
+      background: rgba(0, 0, 0, 0.4);
       padding: 10px;
       width: 90%;
       margin: 0 auto 25px;
@@ -5658,7 +5659,7 @@ button.close {
       text-transform: uppercase; }
     .flex-caption .btn-slide {
       position: relative;
-      top: 74px;
+      top: 75px;
       color: #fff;
       font-size: 24px;
       padding: 20px 45px;
@@ -5717,7 +5718,8 @@ button.close {
     z-index: 1; }
     .flex-caption h3 {
       color: #fff;
-      border: 4px solid #fff;
+      border: 1px solid #222;
+      background: rgba(0, 0, 0, 0.4);
       padding: 10px;
       width: 700px;
       margin: 0 auto 25px;
@@ -5729,7 +5731,7 @@ button.close {
       text-transform: uppercase; }
     .flex-caption .btn-slide {
       position: relative;
-      top: 74px;
+      top: 75px;
       color: #fff;
       font-size: 24px;
       padding: 20px 45px;
