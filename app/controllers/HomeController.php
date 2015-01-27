@@ -17,12 +17,12 @@ class HomeController extends BaseController {
 
     public function showRegister()
     {
-        return View::make('common/register');
+        return View::make('pages/register');
     }
 
     public function showLogin()
     {
-        return View::make('common/login');
+        return View::make('pages/login');
     }
 
     public function doContact()
