@@ -48,9 +48,9 @@
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>{{ $bill->name }}</td>
-              <td>{{ $bill->due_date }}</td>
-              <td>{{ $bill->period_start }}</td>
-              <td>{{ $bill->period_end }}</td>
+              <td nowrap="nowrap">{{ $bill->due_date }}</td>
+              <td nowrap="nowrap">{{ $bill->period_start }}</td>
+              <td nowrap="nowrap">{{ $bill->period_end }}</td>
               <td class="text-right">{{ number_format($bill->amount, 2, '.', ',') }}</td>
               <td>{{ $bill->details }}</td>
               <td>{{ $bill->status }}</td>

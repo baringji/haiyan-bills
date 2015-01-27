@@ -15,6 +15,11 @@ class HomeController extends BaseController {
     |
     */
 
+    public function showRegister()
+    {
+        return View::make('common/register');
+    }
+
     public function showLogin()
     {
         return View::make('common/login');
