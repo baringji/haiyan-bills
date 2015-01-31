@@ -35,15 +35,9 @@
               </span>
             </div>
           </form>
-          <ul class="sidebar-menu">
-            <li><a href="dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-            <li><a href="bills"><i class="fa fa-calendar"></i> <span>Bills</span></a></li>
-            <li><a href="receipts"><i class="fa fa-th"></i> <span>Receipts</span></a></li>
-            <li><a href="files"><i class="fa fa-folder"></i> <span>Files</span></a></li>
-            <li><a href="notes"><i class="fa fa-save"></i> <span>Notes</span></a></li>
-            <li><a href="payment-centers"><i class="fa fa-bookmark"></i> <span>Payment Centers</span></a></li>
-            <li><a href="landmarks"><i class="fa fa-map-marker"></i> <span>Landmarks</span></a></li>
-          </ul>
+
+          @include('common/sidebar')
+
         </section>
       </aside>
 

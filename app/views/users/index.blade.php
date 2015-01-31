@@ -1,6 +1,6 @@
 @extends('common/index')
 @section('title')
-<title>List bills | {{ Lang::get('common.title') }}</title>
+<title>List users | {{ Lang::get('common.title') }}</title>
 @stop
 @section('meta')
 <meta itemscope itemtype="http://schema.org/Website" />
@@ -16,15 +16,15 @@
 <aside class="right-side">
   <section class="content-header">
     <h1>
-      Bills
+      Users
       <small>
-        List bills
-        <a class="btn btn-xs btn-primary btn-flat" href="{{ route('bills.create') }}" data-rel="tooltip" title="Add"><i class="fa fa-plus"></i></a>
+        List users
+        <a class="btn btn-xs btn-primary btn-flat" href="{{ route('users.create') }}" data-rel="tooltip" title="Add"><i class="fa fa-plus"></i></a>
       </small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="{{ URL::to('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Bills</li>
+      <li class="active">Users</li>
     </ol>
   </section>
   <section class="content">
@@ -34,32 +34,32 @@
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Due Date</th>
-              <th>Period Start</th>
-              <th>Period End</th>
-              <th>Amount</th>
-              <th>Details</th>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>Middle Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Type</th>
               <th>Status</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            @if (count($bills) > 0)
-            @foreach ($bills as $key => $bill)
+            @if (count($users) > 0)
+            @foreach ($users as $key => $user)
             <tr>
               <td>{{ $key + 1 }}</td>
-              <td>{{ $bill->name }}</td>
-              <td nowrap="nowrap">{{ $bill->due_date }}</td>
-              <td nowrap="nowrap">{{ $bill->period_start }}</td>
-              <td nowrap="nowrap">{{ $bill->period_end }}</td>
-              <td class="text-right">{{ number_format($bill->amount, 2, '.', ',') }}</td>
-              <td>{{ $bill->details }}</td>
-              <td>{{ Lang::get('common.status.' . $bill->status) }}</td>
+              <td>{{ $user->last_name }}</td>
+              <td>{{ $user->first_name }}</td>
+              <td>{{ $user->middle_name }}</td>
+              <td>{{ $user->email }}</td>
+              <td>{{ $user->address }}</td>
+              <td>{{ Lang::get('common.user_type.' . $user->user_type) }}</td>
+              <td>{{ Lang::get('common.status.' . $user->status) }}</td>
               <td nowrap="nowrap">
-                <a class="btn btn-xs btn-success btn-flat" href="{{ route('bills.show', $bill->id) }}" data-rel="tooltip" title="View"><i class="fa fa-search"></i></a>
-                <a class="btn btn-xs btn-info btn-flat" href="{{ route('bills.edit', $bill->id) }}" data-rel="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
-                <a class="btn btn-xs btn-danger btn-flat" href="{{ route('bills.destroy', $bill->id) }}" data-method="delete" data-rel="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
+                <a class="btn btn-xs btn-success btn-flat" href="{{ route('users.show', $user->id) }}" data-rel="tooltip" title="View"><i class="fa fa-search"></i></a>
+                <a class="btn btn-xs btn-info btn-flat" href="{{ route('users.edit', $user->id) }}" data-rel="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
+                <a class="btn btn-xs btn-danger btn-flat" href="{{ route('users.destroy', $user->id) }}" data-method="delete" data-rel="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
               </td>
             </tr>
             @endforeach

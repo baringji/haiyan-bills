@@ -15,20 +15,21 @@ Route::get('/', function() {
     return View::make('pages/index');
 });
 
-Route::post('contact', 'HomeController@doContact');
+Route::post('contact',  'HomeController@doContact');
 Route::post('register', 'HomeController@doRegister');
-Route::post('login', 'HomeController@doLogin');
+Route::post('login',    'HomeController@doLogin');
 
 Route::get('register', 'HomeController@showRegister');
-Route::get('login', 'HomeController@showLogin');
-Route::get('logout', 'HomeController@doLogout');
+Route::get('login',    'HomeController@showLogin');
+Route::get('logout',   'HomeController@doLogout');
 
 Route::group(array('before' => 'auth'), function() {
-    Route::get('dashboard', 'HomeController@dashboard');
-    Route::get('bills', 'BillController@index');
-    Route::get('receipts', 'ReceiptController@index');
-    Route::get('files', 'FileController@index');
-    Route::get('notes', 'NoteController@index');
-    Route::get('payment-centers', 'PaymentCenterController@index');
-    Route::get('landmarks', 'LandmarkController@index');
+    Route::get('dashboard',            'HomeController@dashboard');
+    Route::resource('bills',           'BillController');
+    Route::resource('files',           'Barryvdh\Elfinder\ElfinderController@showIndex');
+    Route::resource('landmarks',       'LandmarkController');
+    Route::resource('notes',           'NoteController');
+    Route::resource('payment-centers', 'PaymentCenterController');
+    Route::resource('receipts',        'ReceiptController');
+    Route::resource('users',           'UserController');
 });

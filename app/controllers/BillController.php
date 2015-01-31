@@ -26,7 +26,11 @@ class BillController extends \BaseController {
      */
     public function index()
     {
-        return View::make('bills.index', array('bills' => $this->bill->all()));
+        if (Auth::user()->user_type < 2) {
+            return View::make('bills.index', array('bills' => $this->bill->all()));
+        } else {
+            return View::make('bills.index', array('bills' => $this->bill->where('user_id', Auth::user()->id)->get()));
+        }
     }
 
     /**
@@ -46,17 +50,35 @@ class BillController extends \BaseController {
      */
     public function store()
     {
+        $rules = array(
+            'name'         => 'required',
+            'due_date'     => 'required|date',
+            'period_start' => 'required|date',
+            'period_end'   => 'required|date',
+            'amount'       => 'required|numeric',
+            'details'      => 'required'
+        );
+
         $input = Input::all();
 
-        if ( ! $this->bill->isValid($input)) {
+        if ( ! $this->bill->isValid($input, $rules)) {
             return Redirect::back()->withInput()->withErrors($this->bill->errors);
         }
 
-        $data = array();
+        $data = array(
+            'name'         => $input['name'],
+            'due_date'     => $input['due_date'],
+            'period_start' => $input['period_start'],
+            'period_end'   => $input['period_end'],
+            'amount'       => $input['amount'],
+            'details'      => $input['details'],
+            'user_id'      => Auth::user()->id,
+            'status'       => 'O'
+        );
 
         $this->bill->fill($data)->save();
 
-        return Redirect::route('bill.index');
+        return Redirect::route('bills.index');
     }
 
     /**
@@ -95,17 +117,34 @@ class BillController extends \BaseController {
             return Redirect::back()->withInput();
         }
 
+        $rules = array(
+            'name'         => 'required',
+            'due_date'     => 'required|date',
+            'period_start' => 'required|date',
+            'period_end'   => 'required|date',
+            'amount'       => 'required|numeric',
+            'details'      => 'required'
+        );
+
         $input = Input::all();
 
-        if ( ! $bill->isValid($input)) {
-            return Redirect::back()->withInput()->withErrors($bill->errors);
+        if ( ! $this->bill->isValid($input, $rules)) {
+            return Redirect::back()->withInput()->withErrors($this->bill->errors);
         }
 
-        $data = array();
+        $data = array(
+            'name'         => $input['name'],
+            'due_date'     => $input['due_date'],
+            'period_start' => $input['period_start'],
+            'period_end'   => $input['period_end'],
+            'amount'       => $input['amount'],
+            'details'      => $input['details'],
+            'status'       => $input['status']
+        );
 
-        $bill->fill($data)->update();
+        $bill->fill($data)->save();
 
-        return Redirect::route('bill.index');
+        return Redirect::route('bills.index');
     }
 
     /**
@@ -118,7 +157,7 @@ class BillController extends \BaseController {
     {
         $this->bill->destroy($id);
 
-        return Redirect::route('bill.index');
+        return Redirect::route('bills.index');
     }
 
 }
