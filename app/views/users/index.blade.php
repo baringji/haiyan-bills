@@ -57,9 +57,11 @@
               <td>{{ Lang::get('common.user_type.' . $user->user_type) }}</td>
               <td>{{ Lang::get('common.status.' . $user->status) }}</td>
               <td nowrap="nowrap">
+                @if (Auth::user()->user_type < $user->user_type)
                 <a class="btn btn-xs btn-success btn-flat" href="{{ route('users.show', $user->id) }}" data-rel="tooltip" title="View"><i class="fa fa-search"></i></a>
                 <a class="btn btn-xs btn-info btn-flat" href="{{ route('users.edit', $user->id) }}" data-rel="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
                 <a class="btn btn-xs btn-danger btn-flat" href="{{ route('users.destroy', $user->id) }}" data-method="delete" data-rel="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
+                @endif
               </td>
             </tr>
             @endforeach
