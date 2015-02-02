@@ -63,3 +63,4 @@
   @parent
   <script src="{{ URL::asset('assets/AdminLTE/js/AdminLTE/app.js') }}"></script>
 @stop
+

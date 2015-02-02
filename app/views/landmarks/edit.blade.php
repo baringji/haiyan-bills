@@ -60,18 +60,10 @@
 @stop
 @section('stylesheets')
   @parent
-  <link href="{{ URL::asset('assets/AdminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ URL::asset('assets/AdminLTE/css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
 @stop
 @section('scripts')
   @parent
-  <script src="{{ URL::asset('assets/AdminLTE/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
   <script src="{{ URL::asset('assets/AdminLTE/js/AdminLTE/app.js') }}"></script>
-  <script type="text/javascript">
-    jQuery(function($) {
-
-      $('textarea').wysihtml5();
-
-    });
-  </script>
 @stop
+
