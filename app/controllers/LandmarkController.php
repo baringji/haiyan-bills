@@ -46,17 +46,25 @@ class LandmarkController extends \BaseController {
      */
     public function store()
     {
+        $rules = array(
+            'name' => 'required',
+            'type' => 'required'
+        );
+
         $input = Input::all();
 
-        if ( ! $this->landmark->isValid($input)) {
+        if ( ! $this->landmark->isValid($input, $rules)) {
             return Redirect::back()->withInput()->withErrors($this->landmark->errors);
         }
 
-        $data = array();
+        $data = array(
+            'name' => $input['name'],
+            'type' => $input['type']
+        );
 
         $this->landmark->fill($data)->save();
 
-        return Redirect::route('landmark.index');
+        return Redirect::route('landmarks.index');
     }
 
     /**
@@ -95,17 +103,25 @@ class LandmarkController extends \BaseController {
             return Redirect::back()->withInput();
         }
 
+        $rules = array(
+            'name' => 'required',
+            'type' => 'required'
+        );
+
         $input = Input::all();
 
-        if ( ! $landmark->isValid($input)) {
-            return Redirect::back()->withInput()->withErrors($landmark->errors);
+        if ( ! $this->landmark->isValid($input, $rules)) {
+            return Redirect::back()->withInput()->withErrors($this->landmark->errors);
         }
 
-        $data = array();
+        $data = array(
+            'name' => $input['name'],
+            'type' => $input['type']
+        );
 
-        $landmark->fill($data)->update();
+        $landmark->fill($data)->save();
 
-        return Redirect::route('landmark.index');
+        return Redirect::route('landmarks.index');
     }
 
     /**
@@ -118,7 +134,7 @@ class LandmarkController extends \BaseController {
     {
         $this->landmark->destroy($id);
 
-        return Redirect::route('landmark.index');
+        return Redirect::route('landmarks.index');
     }
 
 }
