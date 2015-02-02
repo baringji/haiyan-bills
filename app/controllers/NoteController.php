@@ -26,7 +26,11 @@ class NoteController extends \BaseController {
      */
     public function index()
     {
-        return View::make('notes.index', array('notes' => $this->note->all()));
+        if (Auth::user()->user_type < 2) {
+            return View::make('notes.index', array('notes' => $this->note->all()));
+        } else {
+            return View::make('notes.index', array('notes' => $this->note->where('user_id', Auth::user()->id)->get()));
+        }
     }
 
     /**
@@ -46,17 +50,26 @@ class NoteController extends \BaseController {
      */
     public function store()
     {
+        $rules = array(
+            'name'    => 'required',
+            'details' => 'required'
+        );
+
         $input = Input::all();
 
-        if ( ! $this->note->isValid($input)) {
+        if ( ! $this->note->isValid($input, $rules)) {
             return Redirect::back()->withInput()->withErrors($this->note->errors);
         }
 
-        $data = array();
+        $data = array(
+            'name'    => $input['name'],
+            'details' => $input['details'],
+            'user_id' => Auth::user()->id
+        );
 
         $this->note->fill($data)->save();
 
-        return Redirect::route('note.index');
+        return Redirect::route('notes.index');
     }
 
     /**
@@ -95,17 +108,25 @@ class NoteController extends \BaseController {
             return Redirect::back()->withInput();
         }
 
+        $rules = array(
+            'name'    => 'required',
+            'details' => 'required'
+        );
+
         $input = Input::all();
 
-        if ( ! $note->isValid($input)) {
-            return Redirect::back()->withInput()->withErrors($note->errors);
+        if ( ! $this->note->isValid($input, $rules)) {
+            return Redirect::back()->withInput()->withErrors($this->note->errors);
         }
 
-        $data = array();
+        $data = array(
+            'name'    => $input['name'],
+            'details' => $input['details']
+        );
 
-        $note->fill($data)->update();
+        $note->fill($data)->save();
 
-        return Redirect::route('note.index');
+        return Redirect::route('notes.index');
     }
 
     /**
@@ -118,7 +139,7 @@ class NoteController extends \BaseController {
     {
         $this->note->destroy($id);
 
-        return Redirect::route('note.index');
+        return Redirect::route('notes.index');
     }
 
 }
