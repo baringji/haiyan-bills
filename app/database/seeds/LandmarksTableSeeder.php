@@ -15,10 +15,8 @@ class LandmarksTableSeeder extends Seeder {
 
         for ($i = 1; $i <= 50; $i++) {
             DB::table('landmarks')->insert(array(
-                'name'      => $faker->company,
-                'type'      => $type[array_rand($type)],
-                'latitude'  => $faker->latitude,
-                'longitude' => $faker->longitude
+                'name' => $faker->company,
+                'type' => $type[array_rand($type)]
             ));
         }
     }

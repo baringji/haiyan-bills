@@ -17,6 +17,8 @@ class CreateTablePaymentCentersLandmarks extends Migration {
             $table->increments('id');
             $table->integer('payment_center_id')->unsigned();
             $table->integer('landmark_id')->unsigned();
+            $table->float('latitude');
+            $table->float('longitude');
             $table->nullableTimestamps();
             $table->softDeletes();
 

@@ -20,7 +20,7 @@ class CreateTableBills extends Migration {
             $table->date('due_date');
             $table->date('period_start');
             $table->date('period_end');
-            $table->string('details');
+            $table->text('details');
             $table->string('status');
             $table->integer('user_id')->unsigned();
             $table->nullableTimestamps();

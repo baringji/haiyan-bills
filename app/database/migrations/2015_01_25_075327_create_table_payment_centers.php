@@ -20,8 +20,8 @@ class CreateTablePaymentCenters extends Migration {
             $table->string('city');
             $table->string('country');
             $table->string('zip');
-            $table->string('latitude');
-            $table->string('longitude');
+            $table->float('latitude');
+            $table->float('longitude');
             $table->nullableTimestamps();
             $table->softDeletes();
         });

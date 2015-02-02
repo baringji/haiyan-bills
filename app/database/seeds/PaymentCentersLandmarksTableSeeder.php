@@ -9,10 +9,14 @@ class PaymentCentersLandmarksTableSeeder extends Seeder {
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
+
         for ($i = 1; $i <= 50; $i++) {
             DB::table('payment_centers_landmarks')->insert(array(
                 'payment_center_id' => rand(1, 50),
-                'landmark_id'       => rand(1, 50)
+                'landmark_id'       => rand(1, 50),
+                'latitude'          => $faker->latitude,
+                'longitude'         => $faker->longitude
             ));
         }
     }

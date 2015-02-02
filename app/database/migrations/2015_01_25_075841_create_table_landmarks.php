@@ -17,8 +17,6 @@ class CreateTableLandmarks extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->string('type');
-            $table->string('latitude');
-            $table->string('longitude');
             $table->nullableTimestamps();
             $table->softDeletes();
         });

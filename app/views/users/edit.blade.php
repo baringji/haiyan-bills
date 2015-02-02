@@ -36,7 +36,6 @@
             <label class="col-xs-12 col-sm-3 col-md-3 control-label" for="user_type"> Type </label>
             <div class="col-xs-12 col-sm-5">
               <select class="form-control" name="user_type" id="user_type">
-                <option value="0"{{ ($user->user_type == 0) ? ' selected="true"' : '' }}> System </option>
                 <option value="1"{{ ($user->user_type == 1) ? ' selected="true"' : '' }}> Administrator </option>
                 <option value="2"{{ ($user->user_type == 2) ? ' selected="true"' : '' }}> Consumer </option>
               </select>
