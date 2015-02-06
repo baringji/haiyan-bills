@@ -140,7 +140,7 @@
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="form-group" data-sr="reset">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.561129290134!2d123.896796!3d10.296901000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99be2b31d6f0f%3A0x48243116b41a42f9!2sUniversity+of+Cebu+Main+Campus!5e0!3m2!1sen!2sph!4v1422113000589" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+                <div id="map-canvas" style="width: 100%; height: 300px;"></div>
               </div>
             </div>
           </div>
@@ -284,12 +284,26 @@
         </div>
       </div>
     </footer>
+    <!-- Google Maps -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ URL::asset('assets/jquery/dist/jquery.min.js') }}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ URL::asset('assets/bootstrap/assets/javascripts/bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::asset('assets/FlexSlider/jquery.flexslider-min.js') }}"></script>
     <script src="{{ URL::asset('assets/scrollReveal.js/dist/scrollReveal.min.js') }}"></script>
     <script src="{{ URL::asset('js/haiyanubills.js') }}"></script>
+    <script type="text/javascript">
+      var map;
+      function initialize() {
+        var mapOptions = {
+          zoom: 18,
+          scrollwheel: false,
+          center: new google.maps.LatLng(10.296711, 123.896850)
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
   </body>
 </html>
