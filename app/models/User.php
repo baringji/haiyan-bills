@@ -25,6 +25,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     protected $hidden = array('password', 'remember_token');
 
     /**
+     * Fillable fields.
+     *
+     * @var array
+     */
+    protected $fillable = array('user_name', 'password', 'last_name', 'first_name', 'middle_name', 'email', 'user_type', 'address', 'status');
+
+    /**
      * The enable soft deletion of records.
      *
      * @var mixed

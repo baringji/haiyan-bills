@@ -19,6 +19,16 @@
       <div class="header">Register New Membership</div>
       {{ Form::open(array('url' => 'register')) }}
         <div class="body bg-gray">
+          @if ( $errors->count() > 0 )
+          <div class="callout callout-danger">
+            <h4>The following errors have occurred:</h4>
+            <ul>
+              @foreach ($errors->all() as $message)
+                <li>{{ $message }}</li>
+              @endforeach
+            </ul>
+          </div>
+          @endif
           <div class="form-group">
             <input type="text" class="form-control" name="signup-last-name" id="signup-last-name" placeholder="Enter last name">
           </div>
@@ -35,7 +45,7 @@
             <input type="password" class="form-control" name="signup-password" id="signup-password" placeholder="Enter password">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" name="signup-password-confirm" id="signup-password-confirm" placeholder="Re-enter password">
+            <input type="password" class="form-control" name="signup-password_confirmation" id="signup-password_confirmation" placeholder="Re-enter password">
           </div>
         </div>
         <div class="footer">

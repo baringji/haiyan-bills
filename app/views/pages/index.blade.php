@@ -184,7 +184,7 @@
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 signup-border">
               <h3 class="text-warning signup-login-title" data-sr="reset">Free Sign Up Now</h3>
-              {{ Form::open(array('url' => 'signup')) }}
+              {{ Form::open(array('url' => 'register')) }}
               <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <div class="form-group" data-sr="reset">
@@ -229,7 +229,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <div class="form-group" data-sr="reset">
                     <label for="signup-password-confirm">Confirm Password</label>
-                    <input type="password" class="form-control" name="signup-password-confirm" id="signup-password-confirm" placeholder="Re-enter password">
+                    <input type="password" class="form-control" name="signup-password_confirmation" id="signup-password_confirmation" placeholder="Re-enter password">
                   </div>
                 </div>
               </div>

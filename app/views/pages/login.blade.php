@@ -19,6 +19,16 @@
       <div class="header">Sign In</div>
       {{ Form::open(array('url' => 'login')) }}
       <div class="body bg-gray">
+        @if ( $errors->count() > 0 )
+        <div class="callout callout-danger">
+          <h4>The following errors have occurred:</h4>
+          <ul>
+            @foreach ($errors->all() as $message)
+              <li>{{ $message }}</li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
         <div class="form-group">
           <input type="text" name="login-username" id="login-username" class="form-control" placeholder="Enter username"/>
         </div>
