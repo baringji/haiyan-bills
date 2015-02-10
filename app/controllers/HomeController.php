@@ -15,6 +15,11 @@ class HomeController extends BaseController {
     |
     */
 
+    public function showContact()
+    {
+        return View::make('pages/contact', array('contacts' => DB::table('contacts')->get()));
+    }
+
     public function showRegister()
     {
         return View::make('pages/register');
@@ -27,7 +32,29 @@ class HomeController extends BaseController {
 
     public function doContact()
     {
+        $rules = array(
+            'contact-name'    => 'required',
+            'contact-email'   => 'required|email',
+            'contact-message' => 'required'
+        );
 
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::to('/')
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $contact = array(
+                'name'    => Input::get('contact-name'),
+                'email'   => Input::get('contact-email'),
+                'message' => Input::get('contact-message')
+            );
+
+            DB::table('contacts')->insert($contact);
+        }
+
+        return Redirect::to('/');
     }
 
     public function doRegister()
@@ -98,7 +125,7 @@ class HomeController extends BaseController {
 
     public function dashboard()
     {
-        return View::make('common/dashboard');
+        return View::make('pages/dashboard');
     }
 
 }

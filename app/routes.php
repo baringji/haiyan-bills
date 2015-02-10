@@ -19,6 +19,7 @@ Route::post('contact',  'HomeController@doContact');
 Route::post('register', 'HomeController@doRegister');
 Route::post('login',    'HomeController@doLogin');
 
+Route::get('contact', 'HomeController@showContact');
 Route::get('register', 'HomeController@showRegister');
 Route::get('login',    'HomeController@showLogin');
 Route::get('logout',   'HomeController@doLogout');
