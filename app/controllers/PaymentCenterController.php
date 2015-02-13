@@ -26,7 +26,7 @@ class PaymentCenterController extends \BaseController {
      */
     public function index()
     {
-        return View::make('payment-centers.index', array('paymentCenters' => $this->paymentCenter->all()));
+        return View::make('payment-centers.index');
     }
 
     /**

@@ -19,18 +19,17 @@ Route::post('contact',  'HomeController@doContact');
 Route::post('register', 'HomeController@doRegister');
 Route::post('login',    'HomeController@doLogin');
 
-Route::get('contact', 'HomeController@showContact');
 Route::get('register', 'HomeController@showRegister');
 Route::get('login',    'HomeController@showLogin');
 Route::get('logout',   'HomeController@doLogout');
 
 Route::group(array('before' => 'auth'), function() {
     Route::get('dashboard',            'HomeController@dashboard');
+    Route::get('contact',              'HomeController@showContact');
+    Route::get('payment-centers',      'PaymentCenterController@index');
     Route::resource('bills',           'BillController');
-    Route::resource('files',           'Barryvdh\Elfinder\ElfinderController@showIndex');
     Route::resource('landmarks',       'LandmarkController');
     Route::resource('notes',           'NoteController');
-    Route::resource('payment-centers', 'PaymentCenterController');
     Route::resource('receipts',        'ReceiptController');
     Route::resource('users',           'UserController');
 });

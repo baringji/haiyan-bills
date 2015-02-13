@@ -48,32 +48,32 @@
         <ul class="slides">
           <li>
             <div class="flex-caption">
-              <h3>HaiyanUbills</h3>
-              <p>Start & Grow Faster</p>
+              <h3>Simple Navigation</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
               <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
             </div>
             <img src="{{ URL::asset('images/slide-01.jpg') }}" alt="Slide 01">
           </li>
           <li>
             <div class="flex-caption">
-              <h3>HaiyanUbills</h3>
-              <p>Start & Grow Faster</p>
+              <h3>Smart</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, placeat.</p>
               <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
             </div>
             <img src="{{ URL::asset('images/slide-02.jpg') }}" alt="Slide 02">
           </li>
           <li>
             <div class="flex-caption">
-              <h3>HaiyanUbills</h3>
-              <p>Start & Grow Faster</p>
+              <h3>Organize</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
               <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
             </div>
             <img src="{{ URL::asset('images/slide-03.jpg') }}" alt="Slide 03">
           </li>
           <li>
             <div class="flex-caption">
-              <h3>HaiyanUbills</h3>
-              <p>Start & Grow Faster</p>
+              <h3>Control</h3>
+              <p>Lorem ipsum dolor sit.</p>
               <a data-url="signup-login" class="btn-slide navigate-to">sign up now</a>
             </div>
             <img src="{{ URL::asset('images/slide-04.jpg') }}" alt="Slide 04">

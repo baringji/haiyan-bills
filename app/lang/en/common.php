@@ -26,6 +26,8 @@ return array(
         'A' => '<span class="label label-success">Active</span>',
         'I' => '<span class="label label-danger">Inactive</span>',
         'O' => '<span class="label label-success">Open</span>',
-        'C' => '<span class="label label-danger">Close</span>',
+        'D' => '<span class="label label-danger">Over Due</span>',
+        'E' => '<span class="label label-info">Excess</span>',
+        'P' => '<span class="label label-success">Paid</span>',
     ),
 );
