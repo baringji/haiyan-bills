@@ -29,7 +29,7 @@ class NoteController extends \BaseController {
         if (Auth::user()->user_type < 2) {
             return View::make('notes.index', array('notes' => $this->note->all()));
         } else {
-            return View::make('notes.index', array('notes' => $this->note->where('user_id', Auth::user()->id)->get()));
+            return View::make('notes.index', array('notes' => User::find(Auth::user()->id)->notes));
         }
     }
 

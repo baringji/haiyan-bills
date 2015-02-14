@@ -29,7 +29,7 @@ class BillController extends \BaseController {
         if (Auth::user()->user_type < 2) {
             return View::make('bills.index', array('bills' => $this->bill->all()));
         } else {
-            return View::make('bills.index', array('bills' => $this->bill->where('user_id', Auth::user()->id)->get()));
+            return View::make('bills.index', array('bills' => User::find(Auth::user()->id)->bills));
         }
     }
 

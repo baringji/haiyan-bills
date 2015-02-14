@@ -26,7 +26,21 @@ class ReceiptController extends \BaseController {
      */
     public function index()
     {
-        return View::make('receipts.index', array('receipts' => $this->receipt->all()));
+        $result = DB::table('bills')
+            ->select('name', 'due_date', 'bills.amount')
+            ->sum('receipts.amount')
+            ->join('receipts', 'bills.id', '=', 'receipts.bill_id')
+            ->groupBy('name', 'due_date', 'bills.amount')
+            ->get();
+echo '<pre>';
+            dd($result);
+        return View::make('receipts.index', array(
+            'receipts' => $this->receipt
+                ->with('bills')
+                ->join('bills', 'bills.id', '=', 'receipts.bill_id')
+                ->sum('amount')
+                ->get()
+        ));
     }
 
     /**
