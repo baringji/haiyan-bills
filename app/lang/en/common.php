@@ -28,6 +28,7 @@ return array(
         'O' => '<span class="label label-success">Open</span>',
         'D' => '<span class="label label-danger">Over Due</span>',
         'E' => '<span class="label label-info">Excess</span>',
+        'N' => '<span class="label label-warning">New</span>',
         'P' => '<span class="label label-success">Paid</span>',
     ),
 );

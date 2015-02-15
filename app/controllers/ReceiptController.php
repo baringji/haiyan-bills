@@ -7,16 +7,16 @@ class ReceiptController extends \BaseController {
      *
      * @var IoC Object
      */
-    protected $receipt;
+    protected $bill;
 
     /**
      * Constructor
      *
      * @return Null
      */
-    public function __construct(Receipt $receipt)
+    public function __construct(Bill $bill)
     {
-        $this->receipt = $receipt;
+        $this->bill = $bill;
     }
 
     /**
@@ -26,21 +26,11 @@ class ReceiptController extends \BaseController {
      */
     public function index()
     {
-        $result = DB::table('bills')
-            ->select('name', 'due_date', 'bills.amount')
-            ->sum('receipts.amount')
-            ->join('receipts', 'bills.id', '=', 'receipts.bill_id')
-            ->groupBy('name', 'due_date', 'bills.amount')
-            ->get();
-echo '<pre>';
-            dd($result);
-        return View::make('receipts.index', array(
-            'receipts' => $this->receipt
-                ->with('bills')
-                ->join('bills', 'bills.id', '=', 'receipts.bill_id')
-                ->sum('amount')
-                ->get()
-        ));
+        if (Auth::user()->user_type < 2) {
+            return View::make('receipts.index', array('bills' => $this->bill->all()));
+        } else {
+            return View::make('receipts.index', array('bills' => User::find(Auth::user()->id)->bills));
+        }
     }
 
     /**
@@ -50,7 +40,11 @@ echo '<pre>';
      */
     public function create()
     {
-        return View::make('receipts.create');
+        if (Auth::user()->user_type < 2) {
+            return View::make('receipts.create', array('bills' => $this->bill->all()));
+        } else {
+            return View::make('receipts.create', array('bills' => User::find(Auth::user()->id)->bills));
+        }
     }
 
     /**
@@ -60,17 +54,27 @@ echo '<pre>';
      */
     public function store()
     {
+        $rules = array(
+            'bill'   => 'required',
+            'amount' => 'required|numeric'
+        );
+
         $input = Input::all();
 
-        if ( ! $this->receipt->isValid($input)) {
-            return Redirect::back()->withInput()->withErrors($this->receipt->errors);
+        $receipt = new Receipt;
+
+        if ( ! $receipt->isValid($input, $rules)) {
+            return Redirect::back()->withInput()->withErrors($receipt->errors);
         }
 
-        $data = array();
+        $data = array(
+            'bill_id' => $input['bill'],
+            'amount'  => $input['amount'],
+        );
 
-        $this->receipt->fill($data)->save();
+        $receipt->fill($data)->save();
 
-        return Redirect::route('receipt.index');
+        return Redirect::route('receipts.index');
     }
 
     /**
@@ -81,7 +85,7 @@ echo '<pre>';
      */
     public function show($id)
     {
-        return View::make('receipts.show', array('receipt' => $this->receipt->find($id)));
+        return View::make('receipts.show', array('bill' => $this->bill->find($id)));
     }
 
     /**
@@ -92,7 +96,17 @@ echo '<pre>';
      */
     public function edit($id)
     {
-        return View::make('receipts.edit', array('receipt' => $this->receipt->find($id)));
+        if (Auth::user()->user_type < 2) {
+            return View::make('receipts.edit', array(
+                'bills'   => $this->bill->all(),
+                'receipt' => Receipt::find($id)
+            ));
+        } else {
+            return View::make('receipts.edit', array(
+                'bills'   => User::find(Auth::user()->id)->bills,
+                'receipt' => Receipt::find($id)
+            ));
+        }
     }
 
     /**
@@ -103,23 +117,27 @@ echo '<pre>';
      */
     public function update($id)
     {
-        $receipt = $this->receipt->find($id);
-
-        if ( ! $receipt) {
-            return Redirect::back()->withInput();
-        }
+        $rules = array(
+            'bill'   => 'required',
+            'amount' => 'required|numeric'
+        );
 
         $input = Input::all();
 
-        if ( ! $receipt->isValid($input)) {
+        $receipt = Receipt::find($id);
+
+        if ( ! $receipt->isValid($input, $rules)) {
             return Redirect::back()->withInput()->withErrors($receipt->errors);
         }
 
-        $data = array();
+        $data = array(
+            'bill_id' => $input['bill'],
+            'amount'  => $input['amount'],
+        );
 
-        $receipt->fill($data)->update();
+        $receipt->fill($data)->save();
 
-        return Redirect::route('receipt.index');
+        return Redirect::route('receipts.show', array($input['bill']));
     }
 
     /**
@@ -130,9 +148,13 @@ echo '<pre>';
      */
     public function destroy($id)
     {
-        $this->receipt->destroy($id);
+        $receipt = new Receipt;
 
-        return Redirect::route('receipt.index');
+        $bill = $receipt->find($id);
+
+        $receipt->destroy($id);
+
+        return Redirect::route('receipts.show', array($bill->bill_id));
     }
 
 }

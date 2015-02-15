@@ -21,7 +21,7 @@ class Receipt extends Eloquent {
      *
      * @var array
      */
-    protected $fillable = array();
+    protected $fillable = array('bill_id', 'amount');
 
     /**
      * The enable soft deletion of records.
@@ -35,9 +35,7 @@ class Receipt extends Eloquent {
      *
      * @var mixed
      */
-    public static $rules = array(
-
-    );
+    public static $rules = array();
 
     /**
      * The error messages.
@@ -64,6 +62,16 @@ class Receipt extends Eloquent {
         $this->errors = $validation->messages();
 
         return false;
+    }
+
+    /**
+     * The bills relationship.
+     *
+     * @return object
+     */
+    public function bills()
+    {
+        return $this->belongsTo('Bill');
     }
 
 }

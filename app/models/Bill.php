@@ -73,4 +73,14 @@ class Bill extends Eloquent {
         return $this->belongsTo('User');
     }
 
+    /**
+     * The receipts relationship.
+     *
+     * @return object
+     */
+    public function receipts()
+    {
+        return $this->hasMany('Receipt');
+    }
+
 }

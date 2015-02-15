@@ -46,24 +46,4 @@ class FileManager extends Eloquent {
      */
     public $errors;
 
-    /**
-     * The validation method.
-     *
-     * @param  array $data
-     * @param  array $rules
-     * @return boolean
-     */
-    public function isValid($data)
-    {
-        $validation = Validator::make($data, static::$rules);
-
-        if ($validation->passes()) {
-            return true;
-        }
-
-        $this->errors = $validation->messages();
-
-        return false;
-    }
-
 }

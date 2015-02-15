@@ -43,19 +43,26 @@
             </tr>
           </thead>
           <tbody>
-            @if (count($receipts) > 0)
-            @foreach ($receipts as $key => $receipt)
+            @if (count($bills) > 0)
+            @foreach ($bills as $key => $bill)
             <tr>
               <td>{{ $key + 1 }}</td>
-              <td>{{ $receipt->name }}</td>
-              <td nowrap="nowrap">{{ $receipt->due_date }}</td>
-              <td class="text-right">{{ number_format($receipt->amount, 2, '.', ',') }}</td>
-              <td class="text-right">{{ number_format($receipt->amount, 2, '.', ',') }}</td>
-              <td>{{ Lang::get('common.status.' . $receipt->status) }}</td>
+              <td>{{ $bill->name }}</td>
+              <td nowrap="nowrap">{{ $bill->due_date }}</td>
+              <td class="text-right">{{ number_format($bill->amount, 2, '.', ',') }}</td>
+              <td class="text-right">{{ number_format($bill->receipts->sum('amount'), 2, '.', ',') }}</td>
+              @if ($bill->receipts->sum('amount') == 0)
+              <?php $status = 'N'; ?>
+              @elseif ($bill->amount == $bill->receipts->sum('amount'))
+              <?php $status = 'P'; ?>
+              @elseif ($bill->amount < $bill->receipts->sum('amount'))
+              <?php $status = 'E'; ?>
+              @else
+              <?php $status = 'D'; ?>
+              @endif
+              <td>{{ Lang::get('common.status.' . $status) }}</td>
               <td nowrap="nowrap">
-                <a class="btn btn-xs btn-success btn-flat" href="{{ route('receipts.show', $receipt->id) }}" data-rel="tooltip" title="View"><i class="fa fa-search"></i></a>
-                <a class="btn btn-xs btn-info btn-flat" href="{{ route('receipts.edit', $receipt->id) }}" data-rel="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
-                <a class="btn btn-xs btn-danger btn-flat" href="{{ route('receipts.destroy', $receipt->id) }}" data-method="delete" data-rel="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
+                <a class="btn btn-xs btn-success btn-flat" href="{{ route('receipts.show', $bill->id) }}" data-rel="tooltip" title="View"><i class="fa fa-search"></i></a>
               </td>
             </tr>
             @endforeach

@@ -40,7 +40,6 @@
               <th>Period End</th>
               <th>Amount</th>
               <th>Details</th>
-              <th>Status</th>
               <th></th>
             </tr>
           </thead>
@@ -55,7 +54,6 @@
               <td nowrap="nowrap">{{ $bill->period_end }}</td>
               <td class="text-right">{{ number_format($bill->amount, 2, '.', ',') }}</td>
               <td>{{ $bill->details }}</td>
-              <td>{{ Lang::get('common.status.' . $bill->status) }}</td>
               <td nowrap="nowrap">
                 <a class="btn btn-xs btn-success btn-flat" href="{{ route('bills.show', $bill->id) }}" data-rel="tooltip" title="View"><i class="fa fa-search"></i></a>
                 <a class="btn btn-xs btn-info btn-flat" href="{{ route('bills.edit', $bill->id) }}" data-rel="tooltip" title="Edit"><i class="fa fa-edit"></i></a>
@@ -84,7 +82,7 @@
 
       var oTable = $('table').dataTable({
         "aoColumns": [
-          { "bSortable": false }, null, null, null, null, null, null, null, { "bSortable": false }
+          { "bSortable": false }, null, null, null, null, null, null, { "bSortable": false }
         ],
         "bLengthChange": false,
         "bFilter": false
